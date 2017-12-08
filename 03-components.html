@@ -1,0 +1,22 @@
+<div id="root"></div>
+<script src="https://unpkg.com/react@16.0.0-rc.3/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@16.0.0-rc.3/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+
+<script type="text/babel">
+const rootElement = document.getElementById('root')
+const Message = (props) => <div>{props.children}</div>
+const element = (
+    <div className="container">
+        <Message>Hello World"</Message> //since we're trying to pass in the strings as children, they can be put in regular html form, instead of msg=""
+        <Message>Bye World"</Message>
+    </div>
+)
+console.log(element)
+ReactDOM.render(element, rootElement)
+//Create a reuseable component:
+// 1. Create a function with capital letter
+// 2. Pass in props to that function
+// 3. You can use props however you like to return React elements
+// 4. Now they're reuseable JSX!
+</script>
