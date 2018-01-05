@@ -25,7 +25,7 @@ class StopWatch extends React.Component {
   }
   handleClearClick = () => {
     clearInterval(this.timer)
-    this.setState({lapse: 0, running: false})
+    this.setState({lapse: 0, running: false}) // this will cause a memory leak if we unmount it without componentWillUnmount()
   }
   render() {
     const {lapse, running} = this.state
